@@ -31,6 +31,7 @@
     "axios": "0.12.0",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "moment": "^2.13.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-lazy-load": "3.0.10",
@@ -39,6 +40,7 @@
     "react-router-redux": "4.0.5",
     "react-sparklines": "1.5.2",
     "redux": "^3.0.4",
-    "redux-promise": "0.5.3"
+    "redux-promise": "0.5.3",
+    "sizeof": "^1.0.0"
   }
 }

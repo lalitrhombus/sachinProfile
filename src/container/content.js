@@ -7,7 +7,6 @@ import { Link } from 'react-router';
 class Content extends React.Component {
   constructor(props) {
     super(props);
-    this.props.featchData();
   }
 
   render() {

@@ -60,8 +60,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({featchData}, dispatch);
 }
 
-function mapStateToProps({data}){
-  return {data};
+function mapStateToProps({dataState}){
+  console.log(dataState);
+  return {dataState};
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main);
