@@ -332,10 +332,17 @@ header {
      border-bottom: 1px solid #e8e8e8;
      cursor: pointer;
      position: relative;
+     &:hover{
+      .sideOption{
+        display: block;
+      }
+     }
     }
     .sideOption{
+      top: 0;
       width: 190px;
       position: absolute;
+      display: none;
       background: #fff;
       right: -200px;
       box-shadow: 0px 0px 2px #ccc;
@@ -350,6 +357,33 @@ header {
       }
       .text{
         border-bottom: 1px solid #e8e8e8;
+        &.selected{
+          svg{
+            border-radius: 50%;
+            background: #efefef;
+            fill: #19cb43;
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            margin: 0px 6px;
+          }
+        }
+        &:hover{
+          svg{
+            fill: #19cb43;
+          }
+        }
+      }
+      &:before{
+        content: '';
+        width: 0; 
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right:10px solid $dark-grey-color;
+        left: -10px;
+        position: absolute;
+        top: 10px;
       }
     }
     .text{
@@ -365,5 +399,37 @@ header {
     width: 76%;
     margin: 1%;
     box-shadow: 0px 0px 2px #aaa;
+  }
+}
+
+.content{
+  .tabs{
+    height: 100px;
+    overflow: hidden;
+    font-size: 0;
+    >*{
+      font-size: 16px;
+    }
+    .tab{
+      width: 25%;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      border-right: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      cursor: pointer;
+      .count{
+        font-size: 25px;
+        display: block;
+      }
+      &:hover{
+        color: $primary-color;
+      }
+      &.selected{
+        background: $primary-color;
+        border-bottom: 10px solid $primary-color;
+        color: $dark-grey-color;
+      }
+    }
   }
 }

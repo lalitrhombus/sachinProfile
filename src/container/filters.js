@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {featchData} from '../actions/index';
 import { Link } from 'react-router';
+import Content from './content';
 
 class Filter extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Filter extends React.Component {
                 <div className="filter">
                   <p className="text">Year</p>
                   <div className="sideOption">
-                    <p className="text">1995
+                    <p className="text selected">1995
                       <svg>
                         <use xlinkHref={`public/iconSprite.svg#icon-user`}></use>
                       </svg>
@@ -84,7 +85,7 @@ class Filter extends React.Component {
                   <p className="text">Loss</p>
                 </div>
               </div>
-              <div className="content"></div>
+              <Content />
             </div>
           </div>
       </div>
