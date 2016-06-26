@@ -293,6 +293,7 @@ header {
 .section2{
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
+  padding-bottom: 5%;
   .mainText{
     text-align: center;
     font-size: 20px;
@@ -340,11 +341,11 @@ header {
     }
     .sideOption{
       top: 0;
-      width: 190px;
+      width: 230px;
       position: absolute;
       display: none;
       background: #fff;
-      right: -200px;
+      right: -235px;
       box-shadow: 0px 0px 2px #ccc;
       svg{
         float: right;
@@ -355,8 +356,14 @@ header {
         vertical-align: top;
         margin: 8px 10px;
       }
+      .scroller{
+        max-height: 350px;
+        overflow: auto;
+      }
       .text{
         border-bottom: 1px solid #e8e8e8;
+        text-transform: capitalize;
+        text-align: left;
         &.selected{
           svg{
             border-radius: 50%;
