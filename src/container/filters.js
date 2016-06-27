@@ -31,11 +31,23 @@ class Filter extends React.Component {
     return <div className="sideOption"> <div className="scroller"> {listContent} </div></div>;
   }
 
+  showSelection = (list,sideOptionName)=>{
+    let listContent;
+    if(list.length>2){
+        listContent = <p key="hg" className="selected full">{list.length} Options Selected</p>;      
+    }
+    else{
+        listContent = list.map(list=>{
+        return  <p key={list} className="selected">{list}<svg><use xlinkHref={`public/iconSprite.svg#icon-user`}></use></svg></p>;
+      });      
+    }
+    return <div className="selections"> {listContent}</div>;
+  }
+
   onSideOptionClick=(val,selectedOption)=>{
     if(this.state[selectedOption].indexOf(val)==-1){
       this.setState({selectedOption:this.state[selectedOption].push(val)});
     }
-    console.log(this.state[selectedOption]);
   }
 
   
@@ -57,26 +69,32 @@ class Filter extends React.Component {
                 <div className="filter">
                   <p className="text">Year</p>
                   {this.showSideOptions(this.props.dataState.years,"selectedYears")}
+                  {this.showSelection(this.state.selectedYears,"selectedYears")}
                 </div>
                 <div className="filter">
                   <p className="text">Team</p>
                   {this.showSideOptions(this.props.dataState.teams,"selectedTeams")}
+                  {this.showSelection(this.state.selectedTeams,"selectedTeams")}
                 </div>
                 <div className="filter">
                   <p className="text">Grounds</p>
                   {this.showSideOptions(this.props.dataState.grounds,"selectedGrounds")}
+                  {this.showSelection(this.state.selectedGrounds,"selectedGrounds")}
                 </div>
                 <div className="filter">
                   <p className="text">Result</p>
                   {this.showSideOptions(["won","lost","tied"],"selectedResults")}
+                  {this.showSelection(this.state.selectedResults,"selectedResults")}
                 </div>
                 <div className="filter">
                   <p className="text">Innings</p>
                   {this.showSideOptions(["1st","2nd"],"selectedInnings")}
+                  {this.showSelection(this.state.selectedInnings,"selectedInnings")}
                 </div>
                 <div className="filter">
                   <p className="text">Toss</p>
                   {this.showSideOptions(["won","lost"],"selectedToss")}
+                  {this.showSelection(this.state.selectedToss,"selectedToss")}
                 </div>
               </div>
               <Content />
