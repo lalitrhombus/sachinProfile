@@ -327,8 +327,29 @@ header {
             width: 100%;
             background: $primary-color;
         }
+        .clearAll{
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 40px;
+          top: 0;
+          margin: -1px;
+          background: rgba(255,216,0,0);
+          background: -moz-linear-gradient(left, rgba(255,216,0,0) 0%, rgba(255,216,0,1) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,216,0,0)), color-stop(100%, rgba(255,216,0,1)));
+          background: -webkit-linear-gradient(left, rgba(255,216,0,0) 0%, rgba(255,216,0,1) 100%);
+          background: -o-linear-gradient(left, rgba(255,216,0,0) 0%, rgba(255,216,0,1) 100%);
+          background: -ms-linear-gradient(left, rgba(255,216,0,0) 0%, rgba(255,216,0,1) 100%);
+          background: linear-gradient(to right, rgba(255,216,0,0) 0%, rgba(255,216,0,1) 100%);
+          svg{
+            width: 20px;
+            height: 20px;
+            margin: 20px 0;
+            fill: $dark-grey-color;
+          }
+          z-index: 100;
+        }
         .selections{
-              margin-top: -8px;
               p{
                 display: inline-block;
                 background: #efefef;
@@ -339,6 +360,7 @@ header {
                 text-transform: capitalize;
                 &.full{
                   width: 100%;
+                  margin: 0;
                   display: block;
                 }
               }
@@ -364,6 +386,16 @@ header {
                     display: block;
                 }
             }
+        }
+        .filter{
+          &:after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 20px;
+            right: -20px;
+            top:0;
+          }
         }
         .sideOption {
             top: 0;
@@ -418,6 +450,7 @@ header {
                 left: -10px;
                 position: absolute;
                 top: 10px;
+                z-index: 101;
             }
         }
         .text {
